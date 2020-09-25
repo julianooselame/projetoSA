@@ -1,0 +1,40 @@
+ Dados de seus colaboradores
+ Nome => OK
+ Nascimento => OK
+ CPF => OK
+ Telefone => OK
+ Email => OK
+ Salário => OK
+ Relatório de Colaboradores => OK
+⚫ Dados de seus Clientes
+ Nome
+ Telefone
+ Email
+ Total de Valor que esse cliente já comprou em produtos
+ Relatório de Clientes
+⚫ Dados de seus Produtos
+ Nome => OK
+ Categoria (Eletrodomésticos, Celulares, TV, Informática e Eletroportáteis) => OK
+ Valor de Compra => OK
+ Valor de Venda => OK
+ Total de Lucro obtido por este produto em todas as vendas
+ Quantidade deste Produto em Estoque => OK
+ Relatório de Produtos
+⚫ Estoque
+ Adicionar quantidade de produtos => OK
+ Remover quantidade de produtos => OK
+ Relatório de Estoque => OK
+⚫ Venda
+ Efetuar uma venda para um cliente, de um determinado produto realizada por um
+determinado vendedor
+ Relatório total de vendas
+ Relatório de vendas por Categoria
+⚫ Comissão
+ Cada colaborador recebe uma comissão de 5% do lucro de cada produto vendido
+ Relatório de Comissões
+⚫ Fechamento
+ Fechamento do Mês, que deve constar:
+■ Total de Vendas => OK
+■ Total de Lucro => OK
+■ Vendedor que mais vendeu, e sua respectiva comissão
+■ Produto que mais vendeu

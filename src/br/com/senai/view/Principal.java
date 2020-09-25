@@ -1,0 +1,57 @@
+package br.com.senai.view;
+
+import br.com.senai.enumered.CategoriaProduto;
+import br.com.senai.model.Colaboradores;
+import br.com.senai.model.Produtos;
+import br.com.senai.model.Loja;
+
+public class Principal {
+
+    public static void main(String[] args) {
+
+        Loja loja01 = new Loja(1, "Shopping");
+        Loja loja02 = new Loja(2, "Centro");
+
+        Produtos p01 = new Produtos("Tv", CategoriaProduto.TV, 2000.0, 2500.0, 500.0, 3);
+        Produtos p02 = new Produtos("Liquidificador", CategoriaProduto.ELETROPORTATEIS, 5.0, 100.0, 50.0, 3);
+        Produtos p03 = new Produtos("Geladera", CategoriaProduto.ELETRODOMESTICOS, 2000.0, 2500.0, 500.0, 3);
+        loja01.adicionarProdutos(p01);
+        loja01.adicionarProdutos(p02);
+
+        loja02.adicionarProdutos(p03);
+
+        loja01.listarProdutos();
+
+
+        loja01.venderProduto(p02);
+
+        loja01.resultadosFinanceiros();
+
+        Colaboradores c01 = new Colaboradores("Jailson", "31demaio","32423423423", "34289238", "jailson@.com", 10000.00);
+        Colaboradores c02 = new Colaboradores("Guina","31de fevereiro", "32948039284092","12839","guina@guina.com", 400.00);
+
+        loja01.adicionarColaboradores(c01);
+        loja01.adicionarColaboradores(c02);
+
+        loja01.listarColaboradores();
+
+        p01.adicionarEstoque(5);
+
+        loja01.listarProdutos();
+
+        System.out.println(p01);
+
+        loja01.venderProduto(p01);
+
+        System.out.println(p01);
+
+        loja02.venderProduto(p03);
+        loja02.venderProduto(p03);
+        loja02.venderProduto(p03);
+
+        loja02.listarProdutos();
+        loja01.listarColaboradores();
+        loja01.listarProdutos();
+
+    }
+}
