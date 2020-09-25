@@ -53,5 +53,7 @@ public class Principal {
         loja01.listarColaboradores();
         loja01.listarProdutos();
 
+        loja02.adicionarProdutos(p01);
+
     }
 }
