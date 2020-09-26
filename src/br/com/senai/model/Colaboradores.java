@@ -159,8 +159,8 @@ public class Colaboradores {
         p.removerEstoque(1);
         cl.totalCompras += p.getValorVenda();
         StringBuffer sb = new StringBuffer();
-        sb.append("Venda Efetuada por:\n" + this.nome+"\n");
-        sb.append("Vendeu para Cliente:\n" + cl+"\n");
+        sb.append("Venda Efetuada por: " + this.nome+"\n");
+        sb.append("Vendeu para Cliente: " + cl.getNome()+"\n");
         sb.append("Comissão Total de "+this.nome+" é: "+this.comissao+"\n");
         sb.append("Comissão Nesta Venda de "+this.nome+" é: "+this.comissaoNaVenda+"\n");
         sb.append(p);

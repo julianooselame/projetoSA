@@ -10,7 +10,7 @@
  Nome => OK
  Telefone => OK
  Email => OK
- Total de Valor que esse cliente já comprou em produtos
+ Total de Valor que esse cliente já comprou em produtos => OK
  Relatório de Clientes
 ⚫ Dados de seus Produtos
  Nome => OK
@@ -26,7 +26,7 @@
  Relatório de Estoque => OK
 ⚫ Venda
  Efetuar uma venda para um cliente, de um determinado produto realizada por um
-determinado vendedor
+determinado vendedor => OK
  Relatório total de vendas
  Relatório de vendas por Categoria
 ⚫ Comissão
