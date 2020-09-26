@@ -20,6 +20,7 @@ public class Principal {
         Produtos p01 = new Produtos("Tv", CategoriaProduto.TV, 2000.0, 2500.0, 500.0, 3);
         Produtos p02 = new Produtos("Liquidificador", CategoriaProduto.ELETROPORTATEIS, 5.0, 100.0, 50.0, 3);
         Produtos p03 = new Produtos("Geladera", CategoriaProduto.ELETRODOMESTICOS, 2000.0, 2500.0, 500.0, 3);
+        Produtos p04 = new Produtos("Samisungui",CategoriaProduto.CELULARES,500.0,1000.0,500.0,100);
 
         Cliente cl01 = new Cliente("Kauan", "43234","kauan@gmail.com");
         Cliente cl02 = new Cliente("Jacó","334243","jaco@hotmail.com");
@@ -35,13 +36,13 @@ public class Principal {
 
        /* loja01.venderProduto(p02);*/
 
-        loja01.resultadosFinanceiros();
+       /* loja01.resultadosFinanceiros();*/
 
         Colaboradores c01 = new Colaboradores("Jailson", "31demaio","32423423423", "34289238", "jailson@.com", 10000.00);
         Colaboradores c02 = new Colaboradores("Guina","31de fevereiro", "32948039284092","12839","guina@guina.com", 400.00);
 
-        loja01.adicionarColaboradores(c01);
-        loja01.adicionarColaboradores(c02);
+       loja01.adicionarColaboradores(c01);
+       loja01.adicionarColaboradores(c02);
 
         loja01.listarColaboradores();
 
@@ -51,13 +52,7 @@ public class Principal {
 
         System.out.println(p01);
 
-       /* loja01.venderProduto(p01);*/
-
         System.out.println(p01);
-
-       /* loja02.venderProduto(p03);
-        loja02.venderProduto(p03);
-        loja02.venderProduto(p03);*/
 
         loja02.listarProdutos();
         loja01.listarColaboradores();
@@ -65,10 +60,14 @@ public class Principal {
 
         loja02.adicionarProdutos(p01);
 
-        c01.venderProduto(p01,cl01);
-        c02.venderProduto(p02,cl02);
-        c02.venderProduto(p01,cl03);
 
+
+        c02.listaDeVendasDosFuncionarios();
+        loja02.listarColaboradores();
+
+        c02.venderProduto(p04,cl01);
+        c02.venderProduto(p04,cl02);
+        c02.venderProduto(p04,cl03);
         c02.listaDeVendasDosFuncionarios();
 
 

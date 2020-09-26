@@ -15,6 +15,8 @@ public class Colaboradores {
     private String email;
     private Double salario;
     public ArrayList vendasDoFuncionario = new ArrayList();
+    public Double comissao;
+    public Double comissaoNaVenda;
 
 
     Loja loja0x = new Loja(1, "Shopping");
@@ -33,6 +35,8 @@ public class Colaboradores {
         this.telefone = telefone;
         this.email = email;
         this.salario = salario;
+        this.comissao = 0.0;
+        this.comissaoNaVenda = 0.0;
     }
 
 
@@ -150,11 +154,15 @@ public class Colaboradores {
     public void venderProduto(Produtos p, Cliente cl) {
         this.valorVendido += p.getValorVenda();
         this.valorDeLucro += p.calcularLucro();
+        this.comissaoNaVenda = (p.getValorVenda()/100)*5;
+        this.comissao += this.comissaoNaVenda;
         p.removerEstoque(1);
         cl.totalCompras += p.getValorVenda();
         StringBuffer sb = new StringBuffer();
         sb.append("Venda Efetuada por:\n" + this.nome+"\n");
         sb.append("Vendeu para Cliente:\n" + cl+"\n");
+        sb.append("Comissão Total de "+this.nome+" é: "+this.comissao+"\n");
+        sb.append("Comissão Nesta Venda de "+this.nome+" é: "+this.comissaoNaVenda+"\n");
         sb.append(p);
         vendasDoFuncionario.add(p);
         System.out.println(sb.toString());
