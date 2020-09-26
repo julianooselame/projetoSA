@@ -1,6 +1,10 @@
 package br.com.senai.model;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import br.com.senai.model.Loja;
+import br.com.senai.model.Cliente;
 
 public class Colaboradores {
 
@@ -10,6 +14,14 @@ public class Colaboradores {
     private String telefone;
     private String email;
     private Double salario;
+    public ArrayList vendasDoFuncionario = new ArrayList();
+
+
+    Loja loja0x = new Loja(1, "Shopping");
+
+    Double valorVendido = loja0x.valorVendido;
+    Double valorDeLucro = loja0x.valorDeLucro;
+
 
     //CONSTRUTORES
 
@@ -134,6 +146,29 @@ public class Colaboradores {
     }
 
     //METODOS
+
+    public void venderProduto(Produtos p, Cliente cl) {
+        this.valorVendido += p.getValorVenda();
+        this.valorDeLucro += p.calcularLucro();
+        p.removerEstoque(1);
+        cl.totalCompras += p.getValorVenda();
+        StringBuffer sb = new StringBuffer();
+        sb.append("Venda Efetuada por:\n" + this.nome+"\n");
+        sb.append("Vendeu para Cliente:\n" + cl+"\n");
+        sb.append(p);
+        vendasDoFuncionario.add(p);
+        System.out.println(sb.toString());
+    }
+
+    public void listaDeVendasDosFuncionarios() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("Lista de vendas efetuada pelo colaborador: "+this.nome+"\n");
+        sb.append(vendasDoFuncionario+"\n");
+        sb.append("-----------------------------------------------------------------------------------");
+        System.out.println(sb.toString());
+    }
+
+
     //public Boolean adicionarColaborador(Colaboradores funcionario) {
      //   this.colaboradores.add(funcionario);
      //   return true;

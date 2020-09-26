@@ -1,13 +1,18 @@
 package br.com.senai.view;
 
 import br.com.senai.enumered.CategoriaProduto;
+import br.com.senai.model.Cliente;
 import br.com.senai.model.Colaboradores;
 import br.com.senai.model.Produtos;
 import br.com.senai.model.Loja;
 
+import javax.swing.*;
+
 public class Principal {
 
     public static void main(String[] args) {
+
+        String msg = "";
 
         Loja loja01 = new Loja(1, "Shopping");
         Loja loja02 = new Loja(2, "Centro");
@@ -15,6 +20,11 @@ public class Principal {
         Produtos p01 = new Produtos("Tv", CategoriaProduto.TV, 2000.0, 2500.0, 500.0, 3);
         Produtos p02 = new Produtos("Liquidificador", CategoriaProduto.ELETROPORTATEIS, 5.0, 100.0, 50.0, 3);
         Produtos p03 = new Produtos("Geladera", CategoriaProduto.ELETRODOMESTICOS, 2000.0, 2500.0, 500.0, 3);
+
+        Cliente cl01 = new Cliente("Kauan", "43234","kauan@gmail.com");
+        Cliente cl02 = new Cliente("Jacó","334243","jaco@hotmail.com");
+        Cliente cl03 = new Cliente("Pedroca","334243","jaco@hotmail.com");
+
         loja01.adicionarProdutos(p01);
         loja01.adicionarProdutos(p02);
 
@@ -23,7 +33,7 @@ public class Principal {
         loja01.listarProdutos();
 
 
-        loja01.venderProduto(p02);
+       /* loja01.venderProduto(p02);*/
 
         loja01.resultadosFinanceiros();
 
@@ -41,19 +51,27 @@ public class Principal {
 
         System.out.println(p01);
 
-        loja01.venderProduto(p01);
+       /* loja01.venderProduto(p01);*/
 
         System.out.println(p01);
 
+       /* loja02.venderProduto(p03);
         loja02.venderProduto(p03);
-        loja02.venderProduto(p03);
-        loja02.venderProduto(p03);
+        loja02.venderProduto(p03);*/
 
         loja02.listarProdutos();
         loja01.listarColaboradores();
         loja01.listarProdutos();
 
         loja02.adicionarProdutos(p01);
+
+        c01.venderProduto(p01,cl01);
+        c02.venderProduto(p02,cl02);
+        c02.venderProduto(p01,cl03);
+
+        c02.listaDeVendasDosFuncionarios();
+
+
 
     }
 }

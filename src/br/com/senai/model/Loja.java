@@ -10,8 +10,8 @@ public class Loja {
     private Integer codigo;
     private String loja;
     private List<Produtos> produtosDisponiveis;
-    private Double valorVendido;
-    private Double valorDeLucro;
+    public Double valorVendido;
+    public Double valorDeLucro;
     private List<Colaboradores> relatorioColaboradores;
 
     //Construtores
@@ -101,7 +101,7 @@ public class Loja {
         System.out.println(sb.toString());
     }
 
-    public void venderProduto(Produtos p) {
+    /*public void venderProduto(Produtos p) {
         this.valorVendido += p.getValorVenda();
         this.valorDeLucro += p.calcularLucro();
         p.removerEstoque(1);
@@ -109,7 +109,7 @@ public class Loja {
         sb.append("Venda Efetuada:\n");
         sb.append(p);
         System.out.println(sb.toString());
-    }
+    }*/
 
     public void resultadosFinanceiros( ) {
         StringBuffer sb = new StringBuffer();

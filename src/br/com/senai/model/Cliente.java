@@ -1,11 +1,16 @@
 package br.com.senai.model;
 
+import br.com.senai.model.Loja;
+
+import java.util.ArrayList;
+
 public class Cliente {
 
     private String nome;
     private String telefone;
     private String email;
-    public Double totalCompras;
+    public Double totalCompras = 0.0;
+    private ArrayList listaDeCompras = new ArrayList();
 
     // Construtores
     public Cliente(String nome, String telefone, String email) {
@@ -16,6 +21,14 @@ public class Cliente {
     }
 
     //Gets and Sets
+
+    public ArrayList getListaDeCompras() {
+        return listaDeCompras;
+    }
+
+    public void setListaDeCompras(ArrayList listaDeCompras) {
+        this.listaDeCompras = listaDeCompras;
+    }
 
     public String getNome() {
         return nome;

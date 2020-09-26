@@ -7,9 +7,9 @@
  Salário => OK
  Relatório de Colaboradores => OK
 ⚫ Dados de seus Clientes
- Nome
- Telefone
- Email
+ Nome => OK
+ Telefone => OK
+ Email => OK
  Total de Valor que esse cliente já comprou em produtos
  Relatório de Clientes
 ⚫ Dados de seus Produtos
@@ -38,3 +38,5 @@ determinado vendedor
 ■ Total de Lucro => OK
 ■ Vendedor que mais vendeu, e sua respectiva comissão
 ■ Produto que mais vendeu
+
+Teste
