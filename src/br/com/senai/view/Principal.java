@@ -17,10 +17,10 @@ public class Principal {
         Loja loja01 = new Loja(1, "Shopping");
         Loja loja02 = new Loja(2, "Centro");
 
-        Produtos p01 = new Produtos("Tv", CategoriaProduto.TV, 2000.0, 2500.0, 500.0, 3);
-        Produtos p02 = new Produtos("Liquidificador", CategoriaProduto.ELETROPORTATEIS, 5.0, 100.0, 50.0, 3);
-        Produtos p03 = new Produtos("Geladera", CategoriaProduto.ELETRODOMESTICOS, 2000.0, 2500.0, 500.0, 3);
-        Produtos p04 = new Produtos("Samisungui",CategoriaProduto.CELULARES,500.0,1000.0,500.0,100);
+        Produtos p01 = new Produtos("Tv", CategoriaProduto.TV, 2000.0, 2500.0,100);
+        Produtos p02 = new Produtos("Liquidificador", CategoriaProduto.ELETROPORTATEIS, 5.0, 100.0, 100);
+        Produtos p03 = new Produtos("Geladera", CategoriaProduto.ELETRODOMESTICOS, 2000.0, 2500.0, 100);
+        Produtos p04 = new Produtos("Samisungui",CategoriaProduto.CELULARES,500.0,1000.0,100);
 
         Cliente cl01 = new Cliente("Kauan", "43234","kauan@gmail.com");
         Cliente cl02 = new Cliente("Jacó","334243","jaco@hotmail.com");
@@ -66,9 +66,16 @@ public class Principal {
         loja02.listarColaboradores();
 
         c02.venderProduto(p04,cl01);
+        c02.venderProduto(p01,cl01);
         c02.venderProduto(p04,cl02);
         c02.venderProduto(p04,cl03);
+        c01.venderProduto(p04,cl01);
         c02.listaDeVendasDosFuncionarios();
+
+        System.out.print(p04);
+        System.out.print("_______________________________\n");
+
+        System.out.print(c02);
 
 
 

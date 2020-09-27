@@ -17,6 +17,7 @@ public class Colaboradores {
     public ArrayList vendasDoFuncionario = new ArrayList();
     public Double comissao;
     public Double comissaoNaVenda;
+    public Double totalEmVendas = 0.0;
 
 
     Loja loja0x = new Loja(1, "Shopping");
@@ -110,6 +111,15 @@ public class Colaboradores {
         this.salario = salario;
     }
 
+    public Double getTotalEmVendas() {
+        return totalEmVendas;
+    }
+
+
+    public void setTotalEmVendas(Double totalEmVendas) {
+        this.totalEmVendas = totalEmVendas;
+    }
+
     //HASHCODE and EQUALS
     @Override
     public int hashCode() {
@@ -146,6 +156,8 @@ public class Colaboradores {
         sb.append("Telefone: "+this.telefone+"\n");
         sb.append("Email: "+this.email+"\n");
         sb.append("Salário: "+this.salario+"\n");
+        sb.append("Total de Vendas: "+this.totalEmVendas+"\n");
+        sb.append("Total de Comissões "+this.comissao+"\n");
         return sb.toString();
     }
 
@@ -156,8 +168,12 @@ public class Colaboradores {
         this.valorDeLucro += p.calcularLucro();
         this.comissaoNaVenda = (p.getValorVenda()/100)*5;
         this.comissao += this.comissaoNaVenda;
+        this.totalEmVendas += p.getValorVenda();
         p.removerEstoque(1);
+        p.adicionarUnidadeVendida(1);
         cl.totalCompras += p.getValorVenda();
+        p.totalVendas += p.getValorVenda();
+        p.totalLucro = p.totalUnidadesVendidas*this.valorDeLucro;
         StringBuffer sb = new StringBuffer();
         sb.append("Venda Efetuada por: " + this.nome+"\n");
         sb.append("Vendeu para Cliente: " + cl.getNome()+"\n");

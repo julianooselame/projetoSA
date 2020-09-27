@@ -8,13 +8,14 @@ public class Produtos {
     private CategoriaProduto categoria;
     private Double valorCompra;
     private Double valorVenda;
-    private Double totalLucro;
+    public Double totalLucro = 0.0;
     private Integer quantidadeEstoque;
+    public Double totalVendas = 0.0;
+    public Integer totalUnidadesVendidas = 0;
 
     //Construtores
 
-    public Produtos(String nome, br.com.senai.enumered.CategoriaProduto categoria, Double valorCompra, Double valorVenda,
-                    Double totalLucro, Integer quantidadeEstoque) {
+    public Produtos(String nome, br.com.senai.enumered.CategoriaProduto categoria, Double valorCompra, Double valorVenda, Integer quantidadeEstoque) {
         super();
         this.nome = nome;
         this.categoria = categoria;
@@ -29,6 +30,22 @@ public class Produtos {
     //}
 
     //Gets and Sets
+
+    public Integer getTotalUnidadesVendidas() {
+        return totalUnidadesVendidas;
+    }
+
+    public void setTotalUnidadesVendidas(Integer totalUnidadesVendidas) {
+        this.totalUnidadesVendidas = totalUnidadesVendidas;
+    }
+
+    public Double getTotalVendas() {
+        return totalVendas;
+    }
+
+    public void setTotalVendas(Double totalVendas) {
+        this.totalVendas = totalVendas;
+    }
 
     public String getNome() {
         return nome;
@@ -116,7 +133,9 @@ public class Produtos {
         sb.append("Valor de Compra: "+this.valorCompra+"\n");
         sb.append("Valor de Venda: "+this.valorVenda+"\n");
         sb.append("Quantidade em estoque: "+this.quantidadeEstoque+"\n");
-        sb.append("Lucro: "+calcularLucro()+"\n");
+        sb.append("Lucro na venda: "+calcularLucro()+"\n");
+        sb.append("Total de lucro obtido pelo produto: "+this.totalLucro+"\n");
+        sb.append("Valor total de Vendas de "+this.nome+": "+this.totalVendas+"\n");
         return sb.toString();
     }
 
@@ -134,6 +153,11 @@ public class Produtos {
 
     public void removerEstoque(Integer q) {
         this.quantidadeEstoque-=q;
+
+    }
+
+    public void adicionarUnidadeVendida(Integer q) {
+        this.totalUnidadesVendidas+=q;
 
     }
 
