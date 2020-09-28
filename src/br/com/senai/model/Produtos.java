@@ -136,6 +136,7 @@ public class Produtos {
         sb.append("Lucro na venda: "+calcularLucro()+"\n");
         sb.append("Total de lucro obtido pelo produto: "+this.totalLucro+"\n");
         sb.append("Valor total de Vendas de "+this.nome+": "+this.totalVendas+"\n");
+        sb.append("Total de Unidades vendidas: "+this.totalUnidadesVendidas+"\n");
         return sb.toString();
     }
 

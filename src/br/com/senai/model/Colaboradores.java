@@ -164,6 +164,7 @@ public class Colaboradores {
     //METODOS
 
     public void venderProduto(Produtos p, Cliente cl) {
+        if (p.getQuantidadeEstoque() > 0) {
         this.valorVendido += p.getValorVenda();
         this.valorDeLucro += p.calcularLucro();
         this.comissaoNaVenda = (p.getValorVenda()/100)*5;
@@ -173,7 +174,7 @@ public class Colaboradores {
         p.adicionarUnidadeVendida(1);
         cl.totalCompras += p.getValorVenda();
         p.totalVendas += p.getValorVenda();
-        p.totalLucro = p.totalUnidadesVendidas*this.valorDeLucro;
+        p.totalLucro = p.totalUnidadesVendidas*p.calcularLucro();
         StringBuffer sb = new StringBuffer();
         sb.append("Venda Efetuada por: " + this.nome+"\n");
         sb.append("Vendeu para Cliente: " + cl.getNome()+"\n");
@@ -181,7 +182,8 @@ public class Colaboradores {
         sb.append("Comissão Nesta Venda de "+this.nome+" é: "+this.comissaoNaVenda+"\n");
         sb.append(p);
         vendasDoFuncionario.add(p);
-        System.out.println(sb.toString());
+        System.out.println(sb.toString());}
+        else {System.out.print("Produto em falta no estoque!!\n");}
     }
 
     public void listaDeVendasDosFuncionarios() {

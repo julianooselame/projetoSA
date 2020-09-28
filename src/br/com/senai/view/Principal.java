@@ -21,6 +21,7 @@ public class Principal {
         Produtos p02 = new Produtos("Liquidificador", CategoriaProduto.ELETROPORTATEIS, 5.0, 100.0, 100);
         Produtos p03 = new Produtos("Geladera", CategoriaProduto.ELETRODOMESTICOS, 2000.0, 2500.0, 100);
         Produtos p04 = new Produtos("Samisungui",CategoriaProduto.CELULARES,500.0,1000.0,100);
+        Produtos p05 = new Produtos("Xiaomi", CategoriaProduto.CELULARES, 200.0, 500.0,1);
 
         Cliente cl01 = new Cliente("Kauan", "43234","kauan@gmail.com");
         Cliente cl02 = new Cliente("Jacó","334243","jaco@hotmail.com");
@@ -76,6 +77,14 @@ public class Principal {
         System.out.print("_______________________________\n");
 
         System.out.print(c02);
+
+        loja01.adicionarProdutos(p05);
+
+        c01.venderProduto(p05,cl01);
+        c01.venderProduto(p05,cl02);
+        c01.venderProduto(p02,cl01);
+        c01.venderProduto(p02,cl01);
+        loja01.listarProdutos();
 
 
 

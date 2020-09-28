@@ -17,7 +17,7 @@
  Categoria (Eletrodomésticos, Celulares, TV, Informática e Eletroportáteis) => OK
  Valor de Compra => OK
  Valor de Venda => OK
- Total de Lucro obtido por este produto em todas as vendas
+ Total de Lucro obtido por este produto em todas as vendas =>OK
  Quantidade deste Produto em Estoque => OK
  Relatório de Produtos
 ⚫ Estoque
