@@ -3,16 +3,14 @@ package br.com.senai.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.senai.model.Produtos;
-
 public class Loja {
 
     private Integer codigo;
     private String loja;
-    private List<Produtos> produtosDisponiveis;
+    private List<Produto> produtoDisponiveis;
     public Double valorVendido;
     public Double valorDeLucro;
-    private List<Colaboradores> relatorioColaboradores;
+    private List<Colaborador> relatorioColaboradores;
 
     //Construtores
 
@@ -20,10 +18,10 @@ public class Loja {
         super();
         this.codigo = codigo;
         this.loja = loja;
-        this.produtosDisponiveis = new ArrayList<Produtos>();
+        this.produtoDisponiveis = new ArrayList<Produto>();
         this.valorVendido = 0.0;
         this.valorDeLucro = 0.0;
-        this.relatorioColaboradores = new ArrayList<Colaboradores>();
+        this.relatorioColaboradores = new ArrayList<Colaborador>();
     }
 
 
@@ -48,8 +46,8 @@ public class Loja {
         return codigo;
     }
 
-    public List<Produtos> getProdutosDisponiveis() {
-        return produtosDisponiveis;
+    public List<Produto> getProdutoDisponiveis() {
+        return produtoDisponiveis;
     }
 
     public Double getValorVendido() {
@@ -60,7 +58,7 @@ public class Loja {
         return valorDeLucro;
     }
 
-    public List<Colaboradores> getRelatorioColaboradores() {
+    public List<Colaborador> getRelatorioColaboradores() {
         return relatorioColaboradores;
     }
 
@@ -71,7 +69,7 @@ public class Loja {
         StringBuffer sb = new StringBuffer();
         sb.append("Loja nº: "+this.codigo+"\n");
         sb.append("Localidade: "+this.loja+"\n");
-        sb.append("Quantidade de Produtos"+this.produtosDisponiveis.size()+"\n");
+        sb.append("Quantidade de Produtos"+this.produtoDisponiveis.size()+"\n");
         sb.append("Total de Venda: "+this.valorVendido+"\n");
         sb.append("Total de Lucro: "+this.valorDeLucro+"\n");
 
@@ -80,13 +78,13 @@ public class Loja {
 
     //Metodos
 
-    public void adicionarProdutos(Produtos p) {
-        this.produtosDisponiveis.add(p);
+    public void adicionarProdutos(Produto p) {
+        this.produtoDisponiveis.add(p);
         System.out.println("Produto Adicionado:\n"+p);
     }
 
-    public void removerProdutos(Produtos p) {
-        this.produtosDisponiveis.remove(p);
+    public void removerProdutos(Produto p) {
+        this.produtoDisponiveis.remove(p);
         System.out.println("Produto Removido:\n"+p);
     }
 
@@ -94,7 +92,7 @@ public class Loja {
         StringBuffer sb = new StringBuffer();
         sb.append("Produtos Disponiveis:\n");
         //foreach
-        for (Produtos p : produtosDisponiveis) {
+        for (Produto p : produtoDisponiveis) {
             sb.append("==========================\n");
             sb.append(p+"\n");
         }
@@ -125,13 +123,13 @@ public class Loja {
         StringBuffer sb = new StringBuffer();
         sb.append("Lista de Funcionários:\n");
         //foreach
-        for (Colaboradores c : relatorioColaboradores) {
+        for (Colaborador c : relatorioColaboradores) {
             sb.append("==========================\n");
             sb.append(c+"\n");
         }
         System.out.println(sb.toString());}
 
-    public void adicionarColaboradores(Colaboradores c) {
+    public void adicionarColaboradores(Colaborador c) {
         this.relatorioColaboradores.add(c);
         System.out.println("Colaborador Adicionado:\n"+c);
     }

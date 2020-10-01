@@ -2,7 +2,7 @@ package br.com.senai.model;
 
 import br.com.senai.enumered.CategoriaProduto;
 
-public class Produtos {
+public class Produto {
 
     private String nome;
     private CategoriaProduto categoria;
@@ -15,7 +15,7 @@ public class Produtos {
 
     //Construtores
 
-    public Produtos(String nome, br.com.senai.enumered.CategoriaProduto categoria, Double valorCompra, Double valorVenda, Integer quantidadeEstoque) {
+    public Produto(String nome, br.com.senai.enumered.CategoriaProduto categoria, Double valorCompra, Double valorVenda, Integer quantidadeEstoque) {
         super();
         this.nome = nome;
         this.categoria = categoria;
@@ -114,7 +114,7 @@ public class Produtos {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Produtos other = (Produtos) obj;
+        Produto other = (Produto) obj;
         if (nome == null) {
             if (other.nome != null)
                 return false;
