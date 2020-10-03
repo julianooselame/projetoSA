@@ -233,6 +233,17 @@ public class Loja {
         return lista.toString();
     }
 
+    public Double totaldeVendas2(){
+
+        Double test = 0.0;
+
+        for (int i = 0; i < produtoDisponiveis.size(); i++) {
+            test += produtoDisponiveis.get(i).getTotalVendas();}
+
+            return test;
+        }
+
+    }
 
 
 
@@ -240,7 +251,8 @@ public class Loja {
 
 
 
-}
+
+
 
 
 

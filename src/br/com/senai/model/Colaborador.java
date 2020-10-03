@@ -2,6 +2,7 @@ package br.com.senai.model;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import br.com.senai.model.Loja;
 
 public class Colaborador {
 
@@ -171,6 +172,7 @@ public class Colaborador {
             sb.append("Total de Vendas de "+this.nome+" "+this.totalEmVendas+"\n");
             sb.append(p);
             vendasDoFuncionario.add(p);
+            cl.getListaDeCompras().add(p);
             System.out.println(sb.toString());}
         else {
             JOptionPane.showMessageDialog(null,"Venda não realizada!\nProduto sem estoque!");
