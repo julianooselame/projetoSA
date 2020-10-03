@@ -29,10 +29,10 @@ public class Principal {
 
         Loja loja01 = new Loja(1, "Shopping");
 
-        Produto p01 = new Produto("TV LED 55", CategoriaProduto.TV, 2000.0, 4000.0,100);
+        Produto p01 = new Produto("TV Telefunken 14", CategoriaProduto.TV, 2000.0, 4000.0,100);
         Produto p02 = new Produto("Liquidificador Arno", CategoriaProduto.ELETROPORTATEIS, 50.0, 100.0, 100);
-        Produto p03 = new Produto("Geladeira Eletrolux", CategoriaProduto.ELETRODOMESTICOS, 1000.0, 2000.0, 100);
-        Produto p04 = new Produto("Samsung Galaxy S20",CategoriaProduto.CELULARES,2500.0,5000.0,100);
+        Produto p03 = new Produto("Geladeira Frigidaire", CategoriaProduto.ELETRODOMESTICOS, 1000.0, 2000.0, 100);
+        Produto p04 = new Produto("Motorola Startac",CategoriaProduto.CELULARES,2500.0,5000.0,100);
         Produto p05 = new Produto("Notebook Multilaser", CategoriaProduto.INFORMATICA, 100.0, 200.0,100);
 
         Cliente cl01 = new Cliente("Joey", "555-3234","joey@gmail.com");
@@ -72,7 +72,7 @@ public class Principal {
         menu.append("\n");
         menu.append("5 - Vender Produto");
         menu.append("\n");
-        menu.append("6 - Listar Clientes");
+        menu.append("6 - Relatório de Vendas");
         menu.append("\n");
         menu.append("7 - Adicionar Serviço");
         menu.append("\n");
@@ -177,22 +177,57 @@ public class Principal {
                     opcao7 = Integer.parseInt(JOptionPane.showInputDialog(menu5));
 
                     StringBuffer menu6 = new StringBuffer();
-                    menu6.append("Escolha o Cliente:");
+                    menu6.append("Escolha o produto que será vendido:");
                     menu6.append("\n");
-                    menu6.append(loja01.listaClietela());
+                    menu6.append(loja01.listaEstoque());
                     menu6.append("\n");
 
                     opcao8 = Integer.parseInt(JOptionPane.showInputDialog(menu6));
 
                     StringBuffer menu7 = new StringBuffer();
-                    menu7.append("Escolha o produto que será vendido:");
+                    menu7.append("Escolha o Cliente:");
                     menu7.append("\n");
-                    menu7.append(loja01.listaEstoque());
+                    menu7.append(loja01.listaClietela());
                     menu7.append("\n");
 
                     opcao9 = Integer.parseInt(JOptionPane.showInputDialog(menu7));
 
-                    c01.venderProduto(p01,cl01);
+                    if (opcao7 == 0 && opcao8 == 0 && opcao9 == 0) {c01.venderProduto(p01,cl01);}
+                    else if (opcao7 == 0 && opcao8 == 1 && opcao9 == 0) {c01.venderProduto(p02,cl01);}
+                    else if (opcao7 == 0 && opcao8 == 2 && opcao9 == 0) {c01.venderProduto(p03,cl01);}
+                    else if (opcao7 == 0 && opcao8 == 3 && opcao9 == 0) {c01.venderProduto(p04,cl01);}
+                    else if (opcao7 == 0 && opcao8 == 4 && opcao9 == 0) {c01.venderProduto(p05,cl01);}
+                    else if (opcao7 == 0 && opcao8 == 0 && opcao9 == 1) {c01.venderProduto(p01,cl02);}
+                    else if (opcao7 == 0 && opcao8 == 1 && opcao9 == 1) {c01.venderProduto(p02,cl02);}
+                    else if (opcao7 == 0 && opcao8 == 2 && opcao9 == 1) {c01.venderProduto(p03,cl02);}
+                    else if (opcao7 == 0 && opcao8 == 3 && opcao9 == 1) {c01.venderProduto(p04,cl02);}
+                    else if (opcao7 == 0 && opcao8 == 4 && opcao9 == 1) {c01.venderProduto(p05,cl02);}
+                    else if (opcao7 == 0 && opcao8 == 0 && opcao9 == 2) {c01.venderProduto(p01,cl03);}
+                    else if (opcao7 == 0 && opcao8 == 1 && opcao9 == 2) {c01.venderProduto(p02,cl03);}
+                    else if (opcao7 == 0 && opcao8 == 2 && opcao9 == 2) {c01.venderProduto(p03,cl03);}
+                    else if (opcao7 == 0 && opcao8 == 3 && opcao9 == 2) {c01.venderProduto(p04,cl03);}
+                    else if (opcao7 == 0 && opcao8 == 4 && opcao9 == 2) {c01.venderProduto(p05,cl03);}
+                    else if (opcao7 == 1 && opcao8 == 0 && opcao9 == 0) {c02.venderProduto(p01,cl01);}
+                    else if (opcao7 == 1 && opcao8 == 1 && opcao9 == 0) {c02.venderProduto(p02,cl01);}
+                    else if (opcao7 == 1 && opcao8 == 2 && opcao9 == 0) {c02.venderProduto(p03,cl01);}
+                    else if (opcao7 == 1 && opcao8 == 3 && opcao9 == 0) {c02.venderProduto(p04,cl01);}
+                    else if (opcao7 == 1 && opcao8 == 4 && opcao9 == 0) {c02.venderProduto(p05,cl01);}
+                    else if (opcao7 == 1 && opcao8 == 0 && opcao9 == 1) {c02.venderProduto(p01,cl02);}
+                    else if (opcao7 == 1 && opcao8 == 1 && opcao9 == 1) {c02.venderProduto(p02,cl02);}
+                    else if (opcao7 == 1 && opcao8 == 2 && opcao9 == 1) {c02.venderProduto(p03,cl02);}
+                    else if (opcao7 == 1 && opcao8 == 3 && opcao9 == 1) {c02.venderProduto(p04,cl02);}
+                    else if (opcao7 == 1 && opcao8 == 4 && opcao9 == 1) {c02.venderProduto(p05,cl02);}
+                    else if (opcao7 == 1 && opcao8 == 0 && opcao9 == 2) {c02.venderProduto(p01,cl03);}
+                    else if (opcao7 == 1 && opcao8 == 1 && opcao9 == 2) {c02.venderProduto(p02,cl03);}
+                    else if (opcao7 == 1 && opcao8 == 2 && opcao9 == 2) {c02.venderProduto(p03,cl03);}
+                    else if (opcao7 == 1 && opcao8 == 3 && opcao9 == 2) {c02.venderProduto(p04,cl03);}
+                    else if (opcao7 == 1 && opcao8 == 4 && opcao9 == 2) {c02.venderProduto(p05,cl03);}
+
+                    break;
+
+                case 6: //Relatório de Vendas
+
+                   loja01.jop(loja01.listaTotalVendas());
 
                     break;
 

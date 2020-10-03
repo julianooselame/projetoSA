@@ -1,5 +1,6 @@
 package br.com.senai.model;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Colaborador {
@@ -172,6 +173,7 @@ public class Colaborador {
             vendasDoFuncionario.add(p);
             System.out.println(sb.toString());}
         else {
+            JOptionPane.showMessageDialog(null,"Venda não realizada!\nProduto sem estoque!");
             System.out.print("Produto em falta no estoque!!\n");
         }
     }

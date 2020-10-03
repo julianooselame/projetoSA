@@ -109,16 +109,6 @@ public class Loja {
         return sb.toString();
     }
 
-    /*public void venderProduto(Produtos p) {
-        this.valorVendido += p.getValorVenda();
-        this.valorDeLucro += p.calcularLucro();
-        p.removerEstoque(1);
-        StringBuffer sb = new StringBuffer();
-        sb.append("Venda Efetuada:\n");
-        sb.append(p);
-        System.out.println(sb.toString());
-    }*/
-
     public void resultadosFinanceiros( ) {
         StringBuffer sb = new StringBuffer();
         sb.append("Resultado Financeiro:\n");
@@ -225,6 +215,24 @@ public class Loja {
         }
         return lista.toString();
     }
+
+    public String listaTotalVendas() {
+        StringBuffer lista = new StringBuffer();
+        lista.append("Relatório de Vendas");
+        lista.append("\n");
+        lista.append("========================");
+        lista.append("\n");
+        for (int i = 0; i < produtoDisponiveis.size(); i++) {
+            lista.append("Produto: "+produtoDisponiveis.get(i).getNome()+"\n");
+            lista.append("Unidades Vendidas: "+produtoDisponiveis.get(i).getTotalUnidadesVendidas()+"\n");
+            lista.append("Valor Total de Vendas: "+produtoDisponiveis.get(i).getTotalVendas()+"\n");
+            lista.append("Valor total de Lucro: "+produtoDisponiveis.get(i).getTotalLucro()+"\n");
+            lista.append("========================");
+            lista.append("\n");
+        }
+        return lista.toString();
+    }
+
 
 
 
