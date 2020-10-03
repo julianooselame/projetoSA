@@ -1,5 +1,6 @@
 package br.com.senai.model;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,8 @@ public class Loja {
     public Double valorVendido;
     public Double valorDeLucro;
     private List<Colaborador> relatorioColaboradores;
+    private List<Cliente> relatorioClientes;
+    private String product;
 
     //Construtores
 
@@ -22,6 +25,8 @@ public class Loja {
         this.valorVendido = 0.0;
         this.valorDeLucro = 0.0;
         this.relatorioColaboradores = new ArrayList<Colaborador>();
+        this.relatorioClientes = new ArrayList<Cliente>();
+        this.product = product;
     }
 
 
@@ -62,6 +67,10 @@ public class Loja {
         return relatorioColaboradores;
     }
 
+    public List<Cliente> getRelatorioClientes() {
+        return relatorioClientes;
+    }
+
     //toString
 
     @Override
@@ -88,7 +97,7 @@ public class Loja {
         System.out.println("Produto Removido:\n"+p);
     }
 
-    public void listarProdutos() {
+    public  String listarProdutos() {
         StringBuffer sb = new StringBuffer();
         sb.append("Produtos Disponiveis:\n");
         //foreach
@@ -97,6 +106,7 @@ public class Loja {
             sb.append(p+"\n");
         }
         System.out.println(sb.toString());
+        return sb.toString();
     }
 
     /*public void venderProduto(Produtos p) {
@@ -119,7 +129,7 @@ public class Loja {
         System.out.println(sb.toString());
     }
 
-    public void listarColaboradores() {
+    public String listarColaboradores() {
         StringBuffer sb = new StringBuffer();
         sb.append("Lista de Funcionários:\n");
         //foreach
@@ -127,12 +137,100 @@ public class Loja {
             sb.append("==========================\n");
             sb.append(c+"\n");
         }
-        System.out.println(sb.toString());}
+        System.out.println(sb.toString());
+        return sb.toString();
+    }
 
     public void adicionarColaboradores(Colaborador c) {
         this.relatorioColaboradores.add(c);
         System.out.println("Colaborador Adicionado:\n"+c);
     }
+
+    public static void jop(String mensagem) {
+        JOptionPane.showMessageDialog(null, mensagem);
+
+}
+
+    public String listarClientes() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("Lista de Clientes:\n");
+        //foreach
+        for (Cliente cl : relatorioClientes) {
+            sb.append("==========================\n");
+            sb.append(cl+"\n");
+        }
+        System.out.println(sb.toString());
+        return sb.toString();
+
+    }
+    public void adicionarClientes(Cliente cl) {
+        this.relatorioClientes.add(cl);
+        System.out.println("Cliente Adicionado:\n"+cl);
+}
+
+        public String relatorioEstoque() {
+            StringBuffer lista = new StringBuffer();
+            lista.append("Lista de Produtos em Estoque");
+            lista.append("\n");
+            lista.append("========================");
+            lista.append("\n");
+            for (int i = 0; i < produtoDisponiveis.size(); i++) {
+                lista.append(produtoDisponiveis.get(i).getNome()+"\n");
+                lista.append("Qtde em Estoque: "+produtoDisponiveis.get(i).getQuantidadeEstoque()+"\n");
+                lista.append("========================");
+                lista.append("\n");
+            }
+            return lista.toString();
+        }
+
+    public String listaEstoque() {
+        StringBuffer lista = new StringBuffer();
+        lista.append("Lista de Produtos em Estoque");
+        lista.append("\n");
+        lista.append("========================");
+        lista.append("\n");
+        for (int i = 0; i < produtoDisponiveis.size(); i++) {
+            lista.append("Opção - "+i+"\n"+produtoDisponiveis.get(i).getNome()+"\n");
+            lista.append("Qtde em Estoque: "+produtoDisponiveis.get(i).getQuantidadeEstoque()+"\n");
+            lista.append("========================");
+            lista.append("\n");
+        }
+        return lista.toString();
+    }
+
+    public String listaVendedores() {
+        StringBuffer lista = new StringBuffer();
+        lista.append("Lista de Colaboradores");
+        lista.append("\n");
+        lista.append("========================");
+        lista.append("\n");
+        for (int i = 0; i < relatorioColaboradores.size(); i++) {
+            lista.append("Opção - "+i+"\n"+relatorioColaboradores.get(i).getNome()+"\n");
+            lista.append("========================");
+            lista.append("\n");
+        }
+        return lista.toString();
+    }
+
+    public String listaClietela() {
+        StringBuffer lista = new StringBuffer();
+        lista.append("Lista de Clientes");
+        lista.append("\n");
+        lista.append("========================");
+        lista.append("\n");
+        for (int i = 0; i < relatorioClientes.size(); i++) {
+            lista.append("Opção - "+i+"\n"+relatorioClientes.get(i).getNome()+"\n");
+            lista.append("========================");
+            lista.append("\n");
+        }
+        return lista.toString();
+    }
+
+
+
+
+
+
 
 }
 

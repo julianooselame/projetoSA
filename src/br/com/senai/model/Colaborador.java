@@ -154,7 +154,7 @@ public class Colaborador {
         if (p.getQuantidadeEstoque() > 0) {
             this.valorVendido += p.getValorVenda();
             this.valorDeLucro += p.calcularLucro();
-            this.comissaoNaVenda = (p.getValorVenda()/100)*5;
+            this.comissaoNaVenda = (p.calcularLucro()/100)*5;
             this.comissao += this.comissaoNaVenda;
             this.totalEmVendas += p.getValorVenda();
             p.removerEstoque(1);
@@ -167,6 +167,7 @@ public class Colaborador {
             sb.append("Vendeu para Cliente: " + cl.getNome()+"\n");
             sb.append("Comissão Total de "+this.nome+" é: "+this.comissao+"\n");
             sb.append("Comissão Nesta Venda de "+this.nome+" é: "+this.comissaoNaVenda+"\n");
+            sb.append("Total de Vendas de "+this.nome+" "+this.totalEmVendas+"\n");
             sb.append(p);
             vendasDoFuncionario.add(p);
             System.out.println(sb.toString());}
