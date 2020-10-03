@@ -227,10 +227,17 @@ public class Principal {
 
                 case 6: //Relatório de Vendas
 
-                  // loja01.jop(loja01.listaTotalVendas());
 
                     JOptionPane.showMessageDialog(null, loja01.listaTotalVendas() + "Valor Total Vendido opela loja: R$ "+loja01.totaldeVendas2());
-                    System.out.print(loja01.totaldeVendas2());
+
+
+                    break;
+
+                case 7: //Relatório de Vendas por categoria
+
+
+                    loja01.jop(loja01.totalCategoria());
+
 
                     break;
 

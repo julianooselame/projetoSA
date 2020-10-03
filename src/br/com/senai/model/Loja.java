@@ -1,5 +1,8 @@
 package br.com.senai.model;
 
+import br.com.senai.enumered.CategoriaProduto;
+
+import javax.lang.model.util.Elements;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -243,7 +246,84 @@ public class Loja {
             return test;
         }
 
-    }
+    public String totalCategoria(){
+        StringBuffer lista = new StringBuffer();
+        lista.append("Relatório de Vendas");
+        lista.append("\n");
+        lista.append("========================");
+        lista.append("\n");
+        for (Produto p: produtoDisponiveis) {
+            if(p.getCategoria().equals(CategoriaProduto.CELULARES)) {
+                lista.append("CATEGORIA CELULARES:");
+                lista.append("\n");
+                lista.append("Produto: " + p.getNome());
+                lista.append("\n");
+                lista.append("Valor total em vendas: R$ " + p.getTotalVendas());
+                lista.append("\n");
+                lista.append("Total de unidades vendidas: " + p.getTotalUnidadesVendidas());
+                lista.append("\n");
+                lista.append("========================");
+                lista.append("\n");
+            }
+        if(p.getCategoria().equals(CategoriaProduto.INFORMATICA)) {
+            lista.append("CATEGORIA INFORMATICA:");
+            lista.append("\n");
+            lista.append("Produto: " + p.getNome());
+            lista.append("\n");
+            lista.append("Valor total em vendas: R$ " + p.getTotalVendas());
+            lista.append("\n");
+            lista.append("Total de unidades vendidas: " + p.getTotalUnidadesVendidas());
+            lista.append("\n");
+            lista.append("========================");
+            lista.append("\n");
+        }
+            if(p.getCategoria().equals(CategoriaProduto.ELETRODOMESTICOS)) {
+                lista.append("CATEGORIA ELETRODOMÉSTICOS:");
+                lista.append("\n");
+                lista.append("Produto: " + p.getNome());
+                lista.append("\n");
+                lista.append("Valor total em vendas: R$ " + p.getTotalVendas());
+                lista.append("\n");
+                lista.append("Total de unidades vendidas: " + p.getTotalUnidadesVendidas());
+                lista.append("\n");
+                lista.append("========================");
+                lista.append("\n");
+            }
+
+            if(p.getCategoria().equals(CategoriaProduto.ELETROPORTATEIS)) {
+                lista.append("CATEGORIA ELETROPORTÁTEISS:");
+                lista.append("\n");
+                lista.append("Produto: " + p.getNome());
+                lista.append("\n");
+                lista.append("Valor total em vendas: R$ " + p.getTotalVendas());
+                lista.append("\n");
+                lista.append("Total de unidades vendidas: " + p.getTotalUnidadesVendidas());
+                lista.append("\n");
+                lista.append("========================");
+                lista.append("\n");
+            }
+
+            if(p.getCategoria().equals(CategoriaProduto.TV)) {
+                lista.append("CATEGORIA TV:");
+                lista.append("\n");
+                lista.append("Produto: " + p.getNome());
+                lista.append("\n");
+                lista.append("Valor total em vendas: R$ " + p.getTotalVendas());
+                lista.append("\n");
+                lista.append("Total de unidades vendidas: " + p.getTotalUnidadesVendidas());
+                lista.append("\n");
+                lista.append("========================");
+                lista.append("\n");
+            }
+
+        }
+                return lista.toString();
+
+        }
+
+        }
+
+
 
 
 
