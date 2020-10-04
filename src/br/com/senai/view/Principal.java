@@ -8,6 +8,8 @@ import br.com.senai.model.Loja;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Principal {
 
@@ -74,15 +76,11 @@ public class Principal {
         menu.append("\n");
         menu.append("6 - Relatório de Vendas");
         menu.append("\n");
-        menu.append("7 - Adicionar Serviço");
+        menu.append("7 - Relatório de Vendas por Categoria");
         menu.append("\n");
-        menu.append("8 - Alterar dados do Serviço");
+        menu.append("8 - Relatório de Comissões");
         menu.append("\n");
-        menu.append("9 - Listar Serviços");
-        menu.append("\n");
-        menu.append("10 - Efetuar vendas para o cliente");
-        menu.append("\n");
-        menu.append("11 - Listar Vendas");
+        menu.append("9 - Fechamento");
         menu.append("\n");
         menu.append("0 - Sair");
 
@@ -192,6 +190,17 @@ public class Principal {
 
                     opcao9 = Integer.parseInt(JOptionPane.showInputDialog(menu7));
 
+
+
+                   /* Produto produto;
+                    Cliente cliente;
+                    Colaborador colaborador;
+
+                    if (opcao7 == 0) {
+                        colaborador = c01;
+                    }
+                    colaborador.venderProduto(produto, cliente);*/
+
                     if (opcao7 == 0 && opcao8 == 0 && opcao9 == 0) {c01.venderProduto(p01,cl01);}
                     else if (opcao7 == 0 && opcao8 == 1 && opcao9 == 0) {c01.venderProduto(p02,cl01);}
                     else if (opcao7 == 0 && opcao8 == 2 && opcao9 == 0) {c01.venderProduto(p03,cl01);}
@@ -228,7 +237,7 @@ public class Principal {
                 case 6: //Relatório de Vendas
 
 
-                    JOptionPane.showMessageDialog(null, loja01.listaTotalVendas() + "Valor Total Vendido opela loja: R$ "+loja01.totaldeVendas2());
+                    JOptionPane.showMessageDialog(null, loja01.listaTotalVendas() + "Valor Total Vendido pela loja: R$ "+loja01.totaldeVendas2());
 
 
                     break;
@@ -237,6 +246,22 @@ public class Principal {
 
 
                     loja01.jop(loja01.totalCategoria());
+
+
+                    break;
+
+                case 8: //Relatório de Comissões
+
+
+                    JOptionPane.showMessageDialog(null, loja01.comissoesColaboradores() + "Valor Total de Comissões pagas: R$ "+loja01.totalComissoes());
+
+
+                    break;
+
+                case 9: //Fechamento
+                    JOptionPane.showMessageDialog(null, "FECHAMENTO DO MÊS\n"+"========================\n"+"Valor total vendido pela loja: R$"+ loja01.totaldeVendas2()+
+                            "\nTotal de Lucro da Loja: R$"+loja01.totalLucroLoja()+
+                            "\n"+loja01.VendeuMais()+"\n"+loja01.produtoMaisVendido());
 
 
                     break;

@@ -109,6 +109,15 @@ public class Colaborador {
         this.totalEmVendas = totalEmVendas;
     }
 
+    public Double getComissao() {
+        return comissao;
+    }
+
+
+    public void setComissao(Double comissao) {
+        this.comissao = comissao;
+    }
+
     //HASHCODE and EQUALS
     @Override
     public int hashCode() {
